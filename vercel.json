@@ -1,0 +1,21 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/dashboard",
+      "destination": "/dashboard.html"
+    },
+    {
+      "source": "/insights",
+      "destination": "/insights.html"
+    },
+    {
+      "source": "/leads",
+      "destination": "/leads.html"
+    }
+  ],
+  "cleanUrls": true
+}
