@@ -1,0 +1,16 @@
+{
+  "name": "ai-business-bot",
+  "version": "1.0.0",
+  "description": "Automated AI assistant for sales, leads and business insights.",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve .",
+    "build": "tailwindcss -i ./src/styles/design-system.css -o ./public/output.css"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
