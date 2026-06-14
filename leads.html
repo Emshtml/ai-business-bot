@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Leads Management | BizBot AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Geist:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#f8f9ff",
+                    "on-tertiary-fixed": "#141b2c",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-primary-fixed-variant": "#0038b6",
+                    "on-tertiary": "#ffffff",
+                    "surface-tint": "#004ced",
+                    "primary-fixed-dim": "#b7c4ff",
+                    "on-secondary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#f8f9ff",
+                    "tertiary-container": "#5e667a",
+                    "error-container": "#ffdad6",
+                    "on-surface": "#0b1c30",
+                    "secondary-fixed-dim": "#b9c7e4",
+                    "secondary": "#515f78",
+                    "on-tertiary-fixed-variant": "#3f4759",
+                    "on-secondary-fixed": "#0d1c32",
+                    "on-surface-variant": "#434656",
+                    "primary-fixed": "#dde1ff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-dim": "#cbdbf5",
+                    "primary": "#003ec7",
+                    "secondary-container": "#d2e0fe",
+                    "on-error": "#ffffff",
+                    "on-primary-container": "#dfe3ff",
+                    "primary-container": "#0052ff",
+                    "inverse-surface": "#213145",
+                    "on-tertiary-container": "#dde4fc",
+                    "on-secondary-fixed-variant": "#39475f",
+                    "tertiary-fixed": "#dbe2fa",
+                    "surface-variant": "#d3e4fe",
+                    "on-secondary-container": "#55637d",
+                    "inverse-primary": "#b7c4ff",
+                    "outline-variant": "#c3c5d9",
+                    "surface-container-low": "#eff4ff",
+                    "surface-container": "#e5eeff",
+                    "surface-container-high": "#dce9ff",
+                    "tertiary": "#474e61",
+                    "outline": "#737688",
+                    "inverse-on-surface": "#eaf1ff",
+                    "secondary-fixed": "#d6e3ff",
+                    "on-background": "#0b1c30",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#001452",
+                    "tertiary-fixed-dim": "#bfc6dd",
+                    "on-error-container": "#93000a",
+                    "background": "#f8f9ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base-unit": "8px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px",
+                    "gutter": "24px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "display-lg-mobile": ["Inter"],
+                    "body-base": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "label-mono": ["Geist"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-base": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-mono": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .leads-table-container::-webkit-scrollbar {
+            height: 6px;
+        }
+        .leads-table-container::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        .active-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-base text-on-surface antialiased">
+<!-- Sidebar Navigation -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface dark:bg-on-tertiary-fixed border-r border-outline-variant/30 shadow-md flex flex-col py-6 z-40 hidden md:flex">
+<div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed px-6 mb-8 tracking-tight font-bold">
+            BizBot AI
+        </div>
+<nav class="flex-grow">
+<div class="space-y-1">
+<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high rounded-lg mx-2 flex items-center gap-3 px-4 py-3 duration-200 ease-in-out transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-sm text-body-sm">Dashboard</span>
+</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high rounded-lg mx-2 flex items-center gap-3 px-4 py-3 duration-200 ease-in-out transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-body-sm text-body-sm">AI Insights</span>
+</a>
+<!-- Active State: Leads -->
+<a class="bg-secondary-container dark:bg-on-secondary-container text-on-secondary-container rounded-lg mx-2 flex items-center gap-3 px-4 py-3 duration-200 ease-in-out transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-body-sm text-body-sm font-semibold">Leads</span>
+</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high rounded-lg mx-2 flex items-center gap-3 px-4 py-3 duration-200 ease-in-out transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span class="font-body-sm text-body-sm">Analytics</span>
+</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high rounded-lg mx-2 flex items-center gap-3 px-4 py-3 duration-200 ease-in-out transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-sm text-body-sm">Settings</span>
+</a>
+</div>
+</nav>
+<div class="px-4 mb-6">
+<div class="bg-primary-container p-4 rounded-xl text-center">
+<p class="text-on-primary-fixed-variant font-body-sm text-body-sm mb-2 font-semibold">Executive Portal</p>
+<p class="text-on-primary-fixed-variant opacity-70 text-[12px] mb-3">Premium Plan</p>
+<button class="w-full py-2 bg-primary text-white rounded-lg font-body-sm text-body-sm font-medium hover:bg-on-primary-fixed-variant transition-colors">Upgrade to Pro</button>
+</div>
+</div>
+<div class="mt-auto border-t border-outline-variant/30 pt-4">
+<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high rounded-lg mx-2 flex items-center gap-3 px-4 py-3 duration-200 ease-in-out transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-body-sm text-body-sm">Help Center</span>
+</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high rounded-lg mx-2 flex items-center gap-3 px-4 py-3 duration-200 ease-in-out transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-body-sm text-body-sm">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="md:ml-64 min-h-screen">
+<!-- Header -->
+<header class="h-16 px-margin-desktop flex justify-between items-center bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 sticky top-0 z-30">
+<div class="flex items-center gap-4">
+<h1 class="font-headline-md text-headline-md text-on-surface font-bold">Leads Management</h1>
+<div class="hidden sm:flex items-center gap-2 bg-secondary-container/50 px-3 py-1 rounded-full border border-outline-variant/20">
+<span class="w-2 h-2 bg-[#004ced] rounded-full active-pulse"></span>
+<span class="font-label-mono text-label-mono text-on-secondary-container">BOT ACTIVE</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-full text-body-sm focus:ring-2 focus:ring-primary focus:outline-none w-64 transition-all" placeholder="Global search..." type="text"/>
+</div>
+<button class="p-2 text-secondary hover:bg-surface-container-high rounded-full relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="flex items-center gap-3 pl-4 border-l border-outline-variant/30">
+<div class="text-right hidden sm:block">
+<p class="font-body-sm text-body-sm font-semibold">Alex Rivera</p>
+<p class="text-[12px] text-secondary">Sales Lead</p>
+</div>
+<img alt="User Profile" class="w-10 h-10 rounded-full border-2 border-primary-container object-cover" data-alt="A professional portrait of a confident male sales executive in a minimalist studio environment. The lighting is soft and high-key, emphasizing clean lines and a modern corporate aesthetic. He is wearing a crisp white shirt against a neutral, light-colored background that reflects a high-end enterprise software brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtWp_pMT0DDnF-V5reRR_kwVc-nLoC4ykBvAgNYyNf9SfcHq4T4r_vb5GX6-Br7uCRjEBdYqR3cd02XhLNu5nhJGK8WfZehsri7NvZNu431YN9c03Fmz-veNKOjzkpK4weSXNZmDGk3dYFyAnHtRgiruZae4JHjo1QQffqwa5BW7kY4AAiaN8I9BlKAlS-Xc88DazjGeIdKN4qztAlypqXgvsd8-bp6TBYawjuUZbOYM3OLgk9ObiPZA"/>
+</div>
+</div>
+</header>
+<!-- Canvas -->
+<div class="p-margin-desktop space-y-gutter max-w-container-max mx-auto">
+<!-- Statistics Bento Section -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="glass-card p-6 rounded-xl shadow-sm border border-outline-variant/30 flex flex-col justify-between">
+<div>
+<p class="font-body-sm text-body-sm text-secondary mb-1">Total Captured</p>
+<h3 class="font-display-lg text-display-lg text-primary">1,284</h3>
+</div>
+<div class="flex items-center gap-1 text-[12px] text-[#00875a] font-medium mt-4">
+<span class="material-symbols-outlined text-[16px]" data-icon="trending_up">trending_up</span>
+<span>+12% from last month</span>
+</div>
+</div>
+<div class="glass-card p-6 rounded-xl shadow-sm border border-outline-variant/30 flex flex-col justify-between">
+<div>
+<p class="font-body-sm text-body-sm text-secondary mb-1">High Intent</p>
+<h3 class="font-display-lg text-display-lg text-on-surface">342</h3>
+</div>
+<div class="flex items-center gap-1 text-[12px] text-[#00875a] font-medium mt-4">
+<span class="material-symbols-outlined text-[16px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>Scores above 85</span>
+</div>
+</div>
+<div class="glass-card p-6 rounded-xl shadow-sm border border-outline-variant/30 flex flex-col justify-between">
+<div>
+<p class="font-body-sm text-body-sm text-secondary mb-1">Conversion Rate</p>
+<h3 class="font-display-lg text-display-lg text-on-surface">18.4%</h3>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full mt-4">
+<div class="bg-primary h-full rounded-full w-[18.4%]"></div>
+</div>
+</div>
+<div class="bg-on-tertiary-fixed p-6 rounded-xl shadow-md flex flex-col justify-between overflow-hidden relative">
+
+<div class="relative z-10">
+<p class="font-body-sm text-body-sm text-primary-fixed-dim mb-1">AI Efficiency</p>
+<h3 class="font-display-lg text-display-lg text-white">92%</h3>
+</div>
+<p class="relative z-10 text-[11px] text-surface-container-highest leading-tight mt-4">Automated screening saved 42 hours this week.</p>
+</div>
+</div>
+<!-- Main Table Card -->
+<div class="glass-card rounded-xl shadow-sm border border-outline-variant/30 overflow-hidden">
+<!-- Filters Bar -->
+<div class="p-6 border-b border-outline-variant/30 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="flex flex-wrap items-center gap-3">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-white border border-outline-variant rounded-lg text-body-sm focus:ring-2 focus:ring-primary focus:outline-none w-full sm:w-64" placeholder="Search leads..." type="text"/>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg font-body-sm text-body-sm text-secondary hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span>
+<span>Filter</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg font-body-sm text-body-sm text-secondary hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="calendar_month">calendar_month</span>
+<span>Last 30 Days</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-2 px-6 py-2 bg-primary text-white rounded-lg font-body-sm text-body-sm font-medium hover:bg-on-primary-fixed-variant transition-all shadow-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+<span>Export Leads</span>
+</button>
+</div>
+</div>
+<!-- Table Content -->
+<div class="overflow-x-auto leads-table-container">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/30">
+<th class="px-6 py-4 font-body-sm text-body-sm font-semibold text-secondary">
+<div class="flex items-center gap-2">
+<span>Name</span>
+<span class="material-symbols-outlined text-[16px] cursor-pointer" data-icon="arrow_drop_down">arrow_drop_down</span>
+</div>
+</th>
+<th class="px-6 py-4 font-body-sm text-body-sm font-semibold text-secondary">Email Address</th>
+<th class="px-6 py-4 font-body-sm text-body-sm font-semibold text-secondary">Source</th>
+<th class="px-6 py-4 font-body-sm text-body-sm font-semibold text-secondary">
+<div class="flex items-center gap-2">
+<span>AI Score</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="info" title="AI Confidence Level">info</span>
+</div>
+</th>
+<th class="px-6 py-4 font-body-sm text-body-sm font-semibold text-secondary">Status</th>
+<th class="px-6 py-4 font-body-sm text-body-sm font-semibold text-secondary text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-container text-primary flex items-center justify-center font-bold text-[12px]">JS</div>
+<div>
+<p class="font-body-sm text-body-sm font-semibold">Jonathan Sterling</p>
+<p class="text-[12px] text-secondary">Vanguard Tech Group</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-secondary">j.sterling@vanguard.io</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-surface-container-highest text-secondary text-[11px] font-medium">LinkedIn Ads</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="font-label-mono text-label-mono text-primary font-bold">98/100</span>
+<div class="w-12 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[98%]"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 rounded-full bg-[#e6f4ea] text-[#00875a] text-[11px] font-bold">HOT LEAD</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary-container text-secondary flex items-center justify-center font-bold text-[12px]">MA</div>
+<div>
+<p class="font-body-sm text-body-sm font-semibold">Mia Anderson</p>
+<p class="text-[12px] text-secondary">CloudScale Inc.</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-secondary">mia.a@cloudscale.net</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-surface-container-highest text-secondary text-[11px] font-medium">Direct Search</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="font-label-mono text-label-mono text-on-surface font-bold">74/100</span>
+<div class="w-12 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="bg-on-surface/40 h-full w-[74%]"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-[11px] font-bold uppercase">Nurturing</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center font-bold text-[12px]">RC</div>
+<div>
+<p class="font-body-sm text-body-sm font-semibold">Robert Chen</p>
+<p class="text-[12px] text-secondary">Pacific Logistics</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-secondary">r.chen@paclog.com</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-surface-container-highest text-secondary text-[11px] font-medium">Referral</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="font-label-mono text-label-mono text-primary font-bold">89/100</span>
+<div class="w-12 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[89%]"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 rounded-full bg-[#fff4e5] text-[#b76e00] text-[11px] font-bold uppercase">Follow up</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-error-container text-error flex items-center justify-center font-bold text-[12px]">EL</div>
+<div>
+<p class="font-body-sm text-body-sm font-semibold">Elena Lopez</p>
+<p class="text-[12px] text-secondary">Urban Greenery</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-secondary">elena@urbangreen.com</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-surface-container-highest text-secondary text-[11px] font-medium">Instagram</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="font-label-mono text-label-mono text-on-surface font-bold">42/100</span>
+<div class="w-12 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="bg-on-surface/20 h-full w-[42%]"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 rounded-full bg-surface-container-highest text-secondary text-[11px] font-bold uppercase">Low Intent</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="p-6 bg-surface-container-low border-t border-outline-variant/30 flex items-center justify-between">
+<p class="font-body-sm text-body-sm text-secondary">Showing <span class="font-bold text-on-surface">1-4</span> of 1,284 leads</p>
+<div class="flex items-center gap-2">
+<button class="p-2 border border-outline-variant rounded-lg text-secondary hover:bg-white disabled:opacity-50 transition-colors" disabled="">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<div class="flex items-center gap-1">
+<button class="w-9 h-9 rounded-lg bg-primary text-white font-bold text-body-sm">1</button>
+<button class="w-9 h-9 rounded-lg hover:bg-white text-secondary font-body-sm">2</button>
+<button class="w-9 h-9 rounded-lg hover:bg-white text-secondary font-body-sm">3</button>
+<span class="px-2 text-secondary">...</span>
+<button class="w-9 h-9 rounded-lg hover:bg-white text-secondary font-body-sm">321</button>
+</div>
+<button class="p-2 border border-outline-variant rounded-lg text-secondary hover:bg-white transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- AI Insight Panel -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<div class="lg:col-span-2 glass-card p-8 rounded-xl relative overflow-hidden group border border-primary/20 shadow-lg">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[120px]" data-icon="smart_toy">smart_toy</span>
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<h4 class="font-headline-md text-headline-md">AI Lead Insight</h4>
+</div>
+<p class="font-body-base text-body-base text-secondary max-w-xl">
+                            "I've detected a significant spike in high-intent leads from the <span class="text-primary font-bold">Vanguard Tech Group</span> cluster. Suggesting immediate personalized outreach for Jonathan Sterling. AI predicts a <span class="text-[#00875a] font-bold">94% closing probability</span> if contacted within the next 4 hours."
+                        </p>
+<div class="mt-6 flex gap-3">
+<button class="px-6 py-2.5 bg-primary text-white rounded-lg font-body-sm text-body-sm font-semibold shadow-md hover:scale-[1.02] transition-transform">Draft Smart Email</button>
+<button class="px-6 py-2.5 border border-primary text-primary rounded-lg font-body-sm text-body-sm font-semibold hover:bg-primary/5 transition-colors">View Deep Analysis</button>
+</div>
+</div>
+</div>
+<div class="glass-card p-8 rounded-xl flex flex-col justify-between">
+<div>
+<h4 class="font-body-base text-body-base font-bold mb-4">Quick Actions</h4>
+<div class="space-y-3">
+<button class="w-full flex items-center gap-3 p-3 rounded-lg border border-outline-variant/30 hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="add_circle">add_circle</span>
+<span class="font-body-sm text-body-sm">Add New Lead Manually</span>
+</button>
+<button class="w-full flex items-center gap-3 p-3 rounded-lg border border-outline-variant/30 hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="cloud_upload">cloud_upload</span>
+<span class="font-body-sm text-body-sm">Import CSV/Sheets</span>
+</button>
+<button class="w-full flex items-center gap-3 p-3 rounded-lg border border-outline-variant/30 hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="sync_alt">sync_alt</span>
+<span class="font-body-sm text-body-sm">Sync with CRM</span>
+</button>
+</div>
+</div>
+<div class="mt-6 p-4 bg-surface-container-low rounded-lg border border-outline-variant/20">
+<div class="flex justify-between items-center mb-2">
+<span class="text-[12px] font-bold text-secondary">WEEKLY QUOTA</span>
+<span class="text-[12px] font-bold text-primary">82%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[82%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-outline-variant/20 bg-surface-container-lowest dark:bg-on-tertiary-fixed mt-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<div class="font-headline-md text-headline-md text-on-surface dark:text-on-surface-variant font-bold mb-4">BizBot AI</div>
+<p class="font-body-sm text-body-sm text-secondary dark:text-secondary-fixed-dim">Institutional Intelligence for modern enterprise sales teams.</p>
+</div>
+<div>
+<h5 class="font-body-base text-body-base font-bold mb-4">Resources</h5>
+<ul class="space-y-2">
+<li><a class="font-body-sm text-body-sm text-secondary hover:text-primary transition-colors" href="#">API Status</a></li>
+<li><a class="font-body-sm text-body-sm text-secondary hover:text-primary transition-colors" href="#">Documentation</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-body-base text-body-base font-bold mb-4">Support</h5>
+<ul class="space-y-2">
+<li><a class="font-body-sm text-body-sm text-secondary hover:text-primary transition-colors" href="#">Contact</a></li>
+<li><a class="font-body-sm text-body-sm text-secondary hover:text-primary transition-colors" href="#">Help Center</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-body-base text-body-base font-bold mb-4">Legal</h5>
+<ul class="space-y-2">
+<li><a class="font-body-sm text-body-sm text-secondary hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body-sm text-body-sm text-secondary hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-12 px-margin-desktop max-w-container-max mx-auto border-t border-outline-variant/10 pt-8 text-center md:text-left">
+<p class="font-body-sm text-body-sm text-secondary opacity-80">© 2024 BizBot AI. Institutional Intelligence.</p>
+</div>
+</footer>
+</main>
+<!-- Mobile Nav Bar -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-surface/90 backdrop-blur-lg border-t border-outline-variant/30 flex items-center justify-around px-4 z-50">
+<a class="flex flex-col items-center gap-1 text-secondary" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="text-[10px] font-bold">Leads</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-secondary" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="text-[10px]">AI</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-secondary" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span class="text-[10px]">Stats</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-secondary" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[10px]">Settings</span>
+</a>
+</div>
+<!-- Micro-interaction Scripts -->
+<script>
+        document.querySelectorAll('tr').forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.style.cursor = 'pointer';
+            });
+        });
+
+        // Simple toggle logic for search input focus
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('scale-[1.02]');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('scale-[1.02]');
+        });
+    </script>
+</body></html>
