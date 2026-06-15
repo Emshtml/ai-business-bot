@@ -2,15 +2,126 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --primary: #0052ff;
-  --surface: #f8f9ff;
-  --on-surface: #1a1b1f;
-  --outline: #74777f;
+@layer base {
+  :root {
+    /* Nexus Intelligence - Light Theme Palette */
+    --primary: #003ec7;
+    --primary-container: #0052ff;
+    --on-primary: #ffffff;
+    --on-primary-container: #dfe3ff;
+
+    --secondary: #515f78;
+    --secondary-container: #d2e0fe;
+    --on-secondary: #ffffff;
+    --on-secondary-container: #55637d;
+
+    --surface: #f8f9ff;
+    --surface-dim: #cbdbf5;
+    --surface-bright: #f8f9ff;
+    --surface-container-lowest: #ffffff;
+    --surface-container-low: #eff4ff;
+    --surface-container: #e5eeff;
+    --surface-container-high: #dce9ff;
+    --surface-container-highest: #d3e4fe;
+
+    --on-surface: #0b1c30;
+    --on-surface-variant: #434656;
+    --outline: #737688;
+    --outline-variant: #c3c5d9;
+
+    --inverse-surface: #213145;
+    --inverse-on-surface: #eaf1ff;
+    --inverse-primary: #b7c4ff;
+
+    --error: #ba1a1a;
+    --error-container: #ffdad6;
+    --on-error: #ffffff;
+    --on-error-container: #93000a;
+    
+    /* Layout Tokens */
+    --margin-desktop: 40px;
+    --margin-mobile: 16px;
+    --gutter: 24px;
+    --container-max: 1280px;
+  }
+
+  .dark {
+    /* Nexus Intelligence - Dark Theme Palette (Inferred from Surface/Inverse) */
+    --primary: #b7c4ff;
+    --primary-container: #0038b6;
+    --on-primary: #001452;
+    --on-primary-container: #dde1ff;
+
+    --surface: #0b1c30;
+    --surface-dim: #08111d;
+    --surface-bright: #344358;
+    --surface-container-lowest: #060e18;
+    --surface-container-low: #131d2b;
+    --surface-container: #1b2636;
+    --surface-container-high: #243041;
+    --surface-container-highest: #2e3b4d;
+
+    --on-surface: #eaf1ff;
+    --on-surface-variant: #c3c5d9;
+    --outline: #8d90a2;
+    --outline-variant: #434656;
+
+    --inverse-surface: #f8f9ff;
+    --inverse-on-surface: #0b1c30;
+  }
+
+  body {
+    @apply bg-surface text-on-surface antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  }
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: theme('colors.surface');
-  color: theme('colors.secondary');
+@layer components {
+  /* Design System Specific Components */
+  .glass-card {
+    @apply bg-white/70 dark:bg-black/30 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-sm;
+  }
+
+  .ai-pulse {
+    @apply relative flex h-3 w-3;
+  }
+  
+  .ai-pulse::after {
+    content: '';
+    @apply absolute inline-flex h-full w-full rounded-full bg-primary opacity-75 animate-ping;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-on-primary px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all active:scale-[0.98];
+  }
+
+  .btn-outline {
+    @apply border border-outline-variant text-on-surface hover:bg-surface-container transition-all rounded-lg px-6 py-3;
+  }
+
+  /* Typography Utilities */
+  .text-display {
+    @apply font-headline font-bold text-display-lg;
+  }
+
+  .text-headline {
+    @apply font-headline font-semibold text-headline-md;
+  }
+
+  .text-body {
+    @apply font-body text-body-base;
+  }
+
+  .text-mono {
+    @apply font-mono text-label-mono uppercase tracking-widest;
+  }
+}
+
+@layer utilities {
+  .bg-mesh-gradient {
+    background: radial-gradient(at 0% 0%, rgba(0, 62, 199, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(0, 82, 255, 0.03) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(0, 62, 199, 0.05) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(0, 82, 255, 0.03) 0px, transparent 50%);
+  }
 }
