@@ -1,66 +1,67 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
+<html class="light" lang="pt-BR"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>BizBot AI | Automate Your Sales Growth</title>
+<title>AIBusinessBot | Enterprise Intelligence</title>
+<!-- Google Fonts: Geist & Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:wght@100..800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Geist:wght@400;500&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
             "colors": {
-                    "surface": "#f8f9ff",
-                    "on-tertiary-fixed": "#141b2c",
+                    "inverse-primary": "#c3c0ff",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "on-tertiary-fixed-variant": "#005236",
+                    "surface-bright": "#f8f9ff",
+                    "on-tertiary-fixed": "#002113",
+                    "secondary-container": "#dae2fd",
+                    "tertiary-container": "#006e4b",
+                    "tertiary": "#005338",
+                    "on-surface": "#0b1c30",
+                    "on-error-container": "#93000a",
+                    "error": "#ba1a1a",
                     "surface-container-highest": "#d3e4fe",
-                    "on-primary-fixed-variant": "#0038b6",
+                    "on-error": "#ffffff",
                     "on-tertiary": "#ffffff",
-                    "surface-tint": "#004ced",
-                    "primary-fixed-dim": "#b7c4ff",
+                    "tertiary-fixed": "#6ffbbe",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-secondary-fixed-variant": "#3f465c",
+                    "secondary-fixed-dim": "#bec6e0",
+                    "secondary-fixed": "#dae2fd",
+                    "outline": "#777587",
+                    "tertiary-fixed-dim": "#4edea3",
+                    "surface-container-high": "#dce9ff",
+                    "on-tertiary-container": "#67f4b7",
+                    "on-primary-container": "#dad7ff",
+                    "primary-container": "#4f46e5",
+                    "on-surface-variant": "#464555",
+                    "surface-container": "#e5eeff",
+                    "surface-container-low": "#eff4ff",
+                    "primary-fixed": "#e2dfff",
+                    "on-background": "#0b1c30",
+                    "secondary": "#565e74",
+                    "primary": "#3525cd",
+                    "surface": "#f8f9ff",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#cbdbf5",
+                    "background": "#f8f9ff",
+                    "on-secondary-fixed": "#131b2e",
+                    "on-primary-fixed": "#0f0069",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "surface-tint": "#4d44e3",
+                    "inverse-surface": "#213145",
+                    "on-secondary-container": "#5c647a",
+                    "surface-container-lowest": "#ffffff",
                     "on-secondary": "#ffffff",
                     "on-primary": "#ffffff",
-                    "surface-bright": "#f8f9ff",
-                    "tertiary-container": "#5e667a",
-                    "error-container": "#ffdad6",
-                    "on-surface": "#0b1c30",
-                    "secondary-fixed-dim": "#b9c7e4",
-                    "secondary": "#515f78",
-                    "on-tertiary-fixed-variant": "#3f4759",
-                    "on-secondary-fixed": "#0d1c32",
-                    "on-surface-variant": "#434656",
-                    "primary-fixed": "#dde1ff",
-                    "surface-container-lowest": "#ffffff",
-                    "surface-dim": "#cbdbf5",
-                    "primary": "#003ec7",
-                    "secondary-container": "#d2e0fe",
-                    "on-error": "#ffffff",
-                    "on-primary-container": "#dfe3ff",
-                    "primary-container": "#0052ff",
-                    "inverse-surface": "#213145",
-                    "on-tertiary-container": "#dde4fc",
-                    "on-secondary-fixed-variant": "#39475f",
-                    "tertiary-fixed": "#dbe2fa",
                     "surface-variant": "#d3e4fe",
-                    "on-secondary-container": "#55637d",
-                    "inverse-primary": "#b7c4ff",
-                    "outline-variant": "#c3c5d9",
-                    "surface-container-low": "#eff4ff",
-                    "surface-container": "#e5eeff",
-                    "surface-container-high": "#dce9ff",
-                    "tertiary": "#474e61",
-                    "outline": "#737688",
-                    "inverse-on-surface": "#eaf1ff",
-                    "secondary-fixed": "#d6e3ff",
-                    "on-background": "#0b1c30",
-                    "error": "#ba1a1a",
-                    "on-primary-fixed": "#001452",
-                    "tertiary-fixed-dim": "#bfc6dd",
-                    "on-error-container": "#93000a",
-                    "background": "#f8f9ff"
+                    "outline-variant": "#c7c4d8"
             },
             "borderRadius": {
                     "DEFAULT": "0.25rem",
@@ -69,316 +70,378 @@
                     "full": "9999px"
             },
             "spacing": {
-                    "base-unit": "8px",
-                    "margin-mobile": "16px",
-                    "margin-desktop": "40px",
                     "gutter": "24px",
-                    "container-max": "1280px"
+                    "container-max": "1440px",
+                    "margin-desktop": "32px",
+                    "margin-mobile": "16px",
+                    "sidebar-width": "280px",
+                    "base-unit": "4px"
             },
             "fontFamily": {
-                    "display-lg": ["Inter"],
-                    "body-sm": ["Inter"],
-                    "display-lg-mobile": ["Inter"],
-                    "body-base": ["Inter"],
-                    "headline-md": ["Inter"],
-                    "label-mono": ["Geist"]
+                    "mono-code": ["JetBrains Mono"],
+                    "label-md": ["Geist"],
+                    "headline-md": ["Geist"],
+                    "body-sm": ["Geist"],
+                    "display-lg": ["Geist"],
+                    "display-lg-mobile": ["Geist"],
+                    "body-base": ["Geist"]
             },
             "fontSize": {
-                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
-                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "body-base": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "mono-code": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
                     "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-                    "label-mono": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    "body-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-base": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}]
             }
           },
         },
       }
     </script>
 <style>
-        .glass-card {
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.03);
-        }
-        .ai-pulse {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: .5; transform: scale(1.1); }
-        }
-        body {
-            background-color: #f8f9ff;
-            color: #0b1c30;
-            overflow-x: hidden;
-        }
+        body { background-color: #F8FAFC; font-family: 'Geist', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(226, 232, 240, 0.8); }
+        .hero-gradient { background: radial-gradient(circle at top right, rgba(79, 70, 229, 0.08), transparent), radial-gradient(circle at bottom left, rgba(79, 70, 229, 0.05), transparent); }
     </style>
 </head>
-<body class="font-body-base text-body-base">
+<body class="text-on-background">
 <!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm">
-<div class="flex justify-between items-center h-16 px-margin-desktop max-w-container-max mx-auto">
-<div class="text-headline-md font-headline-md text-primary tracking-tight">BizBot AI</div>
-<div class="hidden md:flex gap-8 items-center">
-<a class="text-primary font-semibold border-b-2 border-primary transition-all duration-300 ease-in-out font-body-base text-body-base" href="#">Features</a>
-<a class="text-secondary hover:text-primary transition-colors font-body-base text-body-base" href="#">Solutions</a>
-<a class="text-secondary hover:text-primary transition-colors font-body-base text-body-base" href="#">Pricing</a>
-<a class="text-secondary hover:text-primary transition-colors font-body-base text-body-base" href="#">Docs</a>
+<nav class="fixed top-0 w-full z-[100] bg-surface/80 backdrop-blur-md border-b border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-desktop h-16 flex items-center justify-between">
+<div class="flex items-center gap-8">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">AIBusinessBot</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="font-body-base text-body-base text-on-surface-variant hover:text-primary transition-colors" href="#features">Features</a>
+<a class="font-body-base text-body-base text-on-surface-variant hover:text-primary transition-colors" href="#solutions">Solutions</a>
+<a class="font-body-base text-body-base text-on-surface-variant hover:text-primary transition-colors" href="#pricing">Pricing</a>
 </div>
-<div class="flex gap-4 items-center">
-<button class="hidden sm:block text-secondary hover:text-primary font-body-base text-body-base transition-colors">Sign In</button>
-<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition-all duration-300">Get Started</button>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant p-2 hover:bg-surface-container rounded-full transition-colors">search</button>
+<button class="hidden md:flex font-label-md text-label-md px-6 py-2.5 rounded-lg border border-outline text-on-surface-variant hover:bg-surface-container transition-all">Sign In</button>
+<button class="font-label-md text-label-md px-6 py-2.5 rounded-lg bg-primary-container text-white shadow-sm hover:opacity-90 transition-all active:scale-[0.98]">Get Started</button>
 </div>
 </div>
 </nav>
 <main class="pt-16">
 <!-- Hero Section -->
-<section class="relative overflow-hidden py-24 md:py-32">
-<div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent"></div>
-<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-<div class="space-y-8">
-<div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full">
-<span class="ai-pulse w-2 h-2 rounded-full bg-primary"></span>
-<span class="font-label-mono text-label-mono uppercase tracking-widest">System Online: v2.4</span>
+<section class="relative overflow-hidden pt-24 pb-32 hero-gradient">
+<div class="max-w-container-max mx-auto px-margin-desktop grid lg:grid-cols-2 gap-16 items-center">
+<div class="z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary mb-6">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">Enterprise Tier 2.0</span>
 </div>
-<h1 class="font-display-lg text-display-lg md:text-display-lg text-on-surface leading-tight">
-                        Automate Your Sales Growth with AI
-                    </h1>
-<p class="text-secondary text-lg max-w-xl">
-                        Generate strategies, capture leads, and automate responses with our intelligent assistant. Designed for the modern enterprise that demands speed and precision.
+<h1 class="font-display-lg text-display-lg mb-6 leading-tight">
+                        Revolutionize your business with <span class="text-primary">Institutional Intelligence.</span>
+</h1>
+<p class="font-body-base text-body-base text-on-surface-variant mb-10 max-w-xl">
+                        AIBusinessBot transforms complex enterprise data into actionable sales strategies, automated precision customer service, and seamless lead generation. Built for modern decision-makers.
                     </p>
-<div class="flex flex-wrap gap-4 pt-4">
-<button class="bg-primary text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:translate-y-[-2px] transition-all duration-300">
-                            Get Started for Free
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="font-label-md text-label-md px-8 py-4 rounded-xl bg-primary-container text-white shadow-lg hover:shadow-primary/20 transition-all active:scale-[0.98] flex items-center justify-center gap-2">
+                            Deploy Enterprise AI
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="font-label-md text-label-md px-8 py-4 rounded-xl border border-outline text-on-surface-variant hover:bg-white transition-all flex items-center justify-center gap-2">
+                            View Live Demo
                         </button>
-<button class="border border-primary text-primary px-8 py-4 rounded-xl font-semibold hover:bg-primary/5 transition-all duration-300 flex items-center gap-2">
-<span class="material-symbols-outlined">play_circle</span>
-                            View Demo
-                        </button>
 </div>
 </div>
-<div class="relative lg:block">
-<div class="glass-card p-4 rounded-2xl relative z-10">
-<img alt="Sales Growth Dashboard" class="rounded-xl w-full shadow-2xl" data-alt="A clean high-tech dashboard interface showing complex data analytics with blue glowing charts and graphs. The design is modern and minimalist with a white and light blue color palette, reflecting a professional glassmorphism aesthetic. Soft ambient lighting illuminates the workspace, emphasizing precision and intelligence in a corporate tech setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBah7bTFnIhsvHjYDpU-JDz_aKJV-qpNE68qbNu4mxym889IUnA89SsbEM6qXT1tXLV8qFgEvGedlef0pr2k7Z64evXNe7sWbgNDbBEwWYEIlIIXdopta9jsdhIijVWjby48CehdersTuU-DdzTXKETX0IkyNKFvHEkgRKUGXz578lLuX64j2elseFhTcNduHbajjC0J7tvm4HzzW1sJDg82io8t--66Buh5y8sugraTh-9kVZQUBAE2w"/>
-<div class="absolute -bottom-6 -left-6 glass-card p-6 rounded-xl hidden md:block">
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 bg-primary-container rounded-full flex items-center justify-center">
-<span class="material-symbols-outlined text-white">trending_up</span>
+<div class="relative lg:h-[600px] flex items-center justify-center">
+<div class="absolute inset-0 bg-primary/5 rounded-full blur-[100px]"></div>
+<div class="relative w-full aspect-square max-w-[500px] glass-card rounded-3xl p-8 shadow-2xl animate-float">
+<img alt="AI Visualization" class="w-full h-full object-cover rounded-2xl grayscale contrast-125 opacity-90 mix-blend-multiply" data-alt="A sophisticated abstract 3D visualization of neural networks and data streams flowing through a crystalline structure. The aesthetic is clean and corporate, utilizing a palette of deep indigo, slate grey, and crisp white. High-key lighting creates soft highlights and subtle shadows, reflecting a professional and authoritative light-mode atmosphere. The composition is centered and modern, evoking the feeling of powerful business intelligence software." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDI7IkrvDFtHXIkZS51g029Z-NykCRrjdT7FJWF8XWislwnlWzEon2MAc1hqgMdwIxLBfqFu5rMYFpn05L5r_BpNkUubYRt9vkOR_CEYJR0E2pRz01SdKzHAKDAOut7UG6h6tE63EqMht-kp-NUSGVPCmTzQ0rUjWBnuY5E828bETp6arRG7uYr3gv-6QTACEkiPwNhGRuHhdLFT6jNUuRmV2bXANHO8KplGf9a90Xzo4VaJ8TJqh_IMw"/>
+<div class="absolute -bottom-6 -left-6 glass-card p-6 rounded-2xl shadow-xl flex items-center gap-4 animate-bounce-slow">
+<div class="w-12 h-12 rounded-full bg-tertiary-container flex items-center justify-center text-white">
+<span class="material-symbols-outlined">trending_up</span>
 </div>
 <div>
-<div class="font-bold text-on-surface">+124% Growth</div>
-<div class="text-secondary text-sm">Last 30 Days</div>
+<p class="font-label-md text-label-md text-on-surface-variant">Efficiency Gain</p>
+<p class="font-headline-md text-headline-md text-on-surface">+142%</p>
 </div>
 </div>
-</div>
-</div>
-<!-- Ambient decoration -->
-<div class="absolute -top-20 -right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
-<div class="absolute -bottom-20 -left-20 w-64 h-64 bg-secondary-container/30 rounded-full blur-3xl"></div>
-</div>
-</div>
-</section>
-<!-- Features Bento Grid -->
-<section class="py-24 bg-surface-container-low">
-<div class="max-w-container-max mx-auto px-margin-desktop">
-<div class="text-center mb-16 space-y-4">
-<h2 class="font-headline-md text-headline-md text-on-surface">Institutional Intelligence</h2>
-<p class="text-secondary max-w-2xl mx-auto">Our platform leverages state-of-the-art LLMs to handle the entire sales lifecycle, from initial strategy to closed won.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<!-- Strategy Card -->
-<div class="glass-card p-10 rounded-2xl flex flex-col justify-between group hover:border-primary/40 transition-colors">
-<div>
-<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-8">
-<span class="material-symbols-outlined text-primary">analytics</span>
-</div>
-<h3 class="font-headline-md text-headline-md mb-4">Sales Strategies</h3>
-<p class="text-secondary mb-8">Deploy custom-tuned AI models that analyze market trends and generate bespoke outreach playbooks tailored to your ICP.</p>
-</div>
-<img alt="Strategy visualization" class="rounded-lg w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A macro shot of a sleek glass prism refracting light into a spectrum of blues and whites against a minimalist architectural background. The image represents strategic clarity and crystalline thinking in a corporate context. The lighting is crisp and airy, conveying a sense of transparency and cutting-edge technological prowess." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcIpbAjew9UDs5chxN8Yb77yeZq4P6h2717ADY6Fg_WDCQL-6DnRju58dL1DoSZBMwxC-LJ_V8O45umk40655ByeXW3pJBoX7sLI4pJIBG2z945KKvOqv1-G5pvrwonpdNkhhTfmLsFUitsBKSHg3dLDyQRzzVbIAKyYTvrhuF76LpOrMO3VLNi_5SWOva_yNr0By1RDfDpBHvj_lbwtstGjsnM8va4LGytOq8L8WkGDOjxSiU0vltCQ"/>
-</div>
-<!-- Lead Capture Card -->
-<div class="glass-card p-10 rounded-2xl flex flex-col justify-between group hover:border-primary/40 transition-colors md:mt-12">
-<div>
-<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-8">
-<span class="material-symbols-outlined text-primary">person_add</span>
-</div>
-<h3 class="font-headline-md text-headline-md mb-4">Lead Capture</h3>
-<p class="text-secondary mb-8">Convert 3x more traffic with autonomous agents that qualify prospects in real-time and book meetings directly into your calendar.</p>
-</div>
-<img alt="Lead capture visualization" class="rounded-lg w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Detailed close-up of high-end office materials like a polished metallic pen resting on a crisp white document with subtle blue grid patterns. The composition is clean and minimalist, using a bright, high-key lighting style that emphasizes executive focus and professional lead management activities in a modern business environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6XfXCCx9szifhUdFTF1ee86DHoMmmhB2l6HBFLmqhhwQQPRNRzXrUDgAPLLl8w7i4wN020sknXNcwUSCoSN3jqyRuXkz3tMh9Dh5_rttEfUQGeDezDZS-qSKuS105xBdLWrb4lxmytk1I1AQtHfW3WT14ka_8Vz5Fk_DOnbGpBeMK8yGaLce2PuKpopu3WTjrjHhxXQG7yZ5YCfP06bDPwQSb_HOU2spSzkikx70DDfJcSnirYm6BPA"/>
-</div>
-<!-- Response Card -->
-<div class="glass-card p-10 rounded-2xl flex flex-col justify-between group hover:border-primary/40 transition-colors">
-<div>
-<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-8">
-<span class="material-symbols-outlined text-primary">chat</span>
-</div>
-<h3 class="font-headline-md text-headline-md mb-4">Automated Responses</h3>
-<p class="text-secondary mb-8">Maintain a human-like tone across all channels with AI that understands nuance, handles objections, and follows up instantly.</p>
-</div>
-<img alt="Automation visualization" class="rounded-lg w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A diverse team of professionals in a modern glass-walled conference room collaborating with digital projections of data floating in the air. The scene is bright and optimistic, featuring a color palette of whites, soft grays, and electric blue accents. The visual style is corporate modern, suggesting seamless collaboration between humans and AI agents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfiLRzhoFsyiUSbiz_xLX9jgx8JVQvL2Sm3VZUykHuiF80IldapzXUmPy2iIiJ-OmN9uddjPJH1ZvVET2W27PSRPOkjXUcSLKCZa11Xqlt48BBP9g2sOukefV02hsJlIGR8jvJab9N6b3JE_-A-kHxQzQCdYFjWj52kLfI2rCbiPZvsmM1Rf0TOjn_7LbjDZyemV-XLEE8SGMyk60wLZxTgw_2yP_NyfXq2_2nu15NeUaYEkEcXtSQfg"/>
 </div>
 </div>
 </div>
 </section>
-<!-- Pricing Section -->
-<section class="py-24">
+<!-- Feature Bento Grid -->
+<section class="py-24 bg-white" id="features">
 <div class="max-w-container-max mx-auto px-margin-desktop">
-<div class="text-center mb-16 space-y-4">
-<h2 class="font-display-lg text-headline-md text-on-surface">Precision-Tier Pricing</h2>
-<p class="text-secondary">Scalable intelligence for startups and global enterprises.</p>
+<div class="text-center mb-16">
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg mb-4">Institutional Intelligence</h2>
+<p class="font-body-base text-body-base text-on-surface-variant max-w-2xl mx-auto">Our multi-agent system handles every facet of your business operations with autonomous precision.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Basic -->
-<div class="p-8 rounded-2xl border border-outline-variant/30 hover:shadow-xl transition-all duration-300 flex flex-col h-full bg-white">
-<div class="mb-8">
-<h3 class="text-lg font-bold text-secondary mb-2">Starter</h3>
-<div class="flex items-baseline gap-1">
-<span class="text-4xl font-bold">$99</span>
-<span class="text-secondary">/mo</span>
+<!-- Feature 1 -->
+<div class="group p-8 rounded-3xl bg-surface-container-low border border-outline-variant hover:border-primary/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5">
+<div class="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">insights</span>
 </div>
+<h3 class="font-headline-md text-headline-md mb-4">Sales Strategies</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                            Autonomous agents analyze market trends and internal performance to generate high-conversion sales playbooks tailored to your industry.
+                        </p>
 </div>
-<ul class="space-y-4 mb-12 flex-grow">
-<li class="flex items-center gap-3 text-secondary">
-<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-                                1,000 AI Credits
+<!-- Feature 2: Highlit/Center -->
+<div class="group p-8 rounded-3xl bg-inverse-surface text-white border border-transparent transition-all duration-300 shadow-2xl relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-9xl">auto_awesome</span>
+</div>
+<div class="w-14 h-14 rounded-2xl bg-primary-container flex items-center justify-center text-white mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">hub</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Automated Responses</h3>
+<p class="font-body-sm text-body-sm text-slate-300 leading-relaxed mb-6">
+                            Deploy AI that understands context, tone, and technical nuances. Reduce support latency to near-zero while maintaining an executive brand voice.
+                        </p>
+<ul class="space-y-3">
+<li class="flex items-center gap-2 font-label-md text-label-md text-primary-fixed-dim">
+<span class="material-symbols-outlined text-sm">check_circle</span> 24/7 Contextual Support
                             </li>
-<li class="flex items-center gap-3 text-secondary">
-<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-                                Basic Lead Capture
-                            </li>
-<li class="flex items-center gap-3 text-secondary">
-<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-                                Email Support
+<li class="flex items-center gap-2 font-label-md text-label-md text-primary-fixed-dim">
+<span class="material-symbols-outlined text-sm">check_circle</span> Multilingual Fluency
                             </li>
 </ul>
-<button class="w-full py-3 rounded-xl border border-primary text-primary font-semibold hover:bg-primary/5 transition-colors">Start Free Trial</button>
 </div>
-<!-- Pro -->
-<div class="p-8 rounded-2xl border-2 border-primary shadow-2xl relative overflow-hidden flex flex-col h-full bg-white transform md:-translate-y-4">
-<div class="absolute top-0 right-0 bg-primary text-white text-[10px] uppercase tracking-widest px-4 py-1 font-bold">Most Popular</div>
-<div class="mb-8">
-<h3 class="text-lg font-bold text-primary mb-2">Enterprise</h3>
-<div class="flex items-baseline gap-1">
-<span class="text-4xl font-bold">$499</span>
-<span class="text-secondary">/mo</span>
+<!-- Feature 3 -->
+<div class="group p-8 rounded-3xl bg-surface-container-low border border-outline-variant hover:border-primary/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5">
+<div class="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">person_add</span>
 </div>
-</div>
-<ul class="space-y-4 mb-12 flex-grow">
-<li class="flex items-center gap-3 text-on-surface">
-<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-                                Unlimited AI Credits
-                            </li>
-<li class="flex items-center gap-3 text-on-surface">
-<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-                                Advanced CRM Sync
-                            </li>
-<li class="flex items-center gap-3 text-on-surface">
-<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-                                Strategy Lab Access
-                            </li>
-<li class="flex items-center gap-3 text-on-surface">
-<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-                                24/7 Priority Support
-                            </li>
-</ul>
-<button class="w-full py-4 rounded-xl bg-primary text-white font-bold shadow-lg hover:opacity-90 transition-opacity">Upgrade to Pro</button>
-</div>
-<!-- Custom -->
-<div class="p-8 rounded-2xl border border-outline-variant/30 hover:shadow-xl transition-all duration-300 flex flex-col h-full bg-white">
-<div class="mb-8">
-<h3 class="text-lg font-bold text-secondary mb-2">Custom</h3>
-<div class="flex items-baseline gap-1">
-<span class="text-4xl font-bold">Talk</span>
-<span class="text-secondary">to us</span>
-</div>
-</div>
-<ul class="space-y-4 mb-12 flex-grow">
-<li class="flex items-center gap-3 text-secondary">
-<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-                                Custom Model Training
-                            </li>
-<li class="flex items-center gap-3 text-secondary">
-<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-                                On-premise Deployment
-                            </li>
-<li class="flex items-center gap-3 text-secondary">
-<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-                                Dedicated Account Manager
-                            </li>
-</ul>
-<button class="w-full py-3 rounded-xl border border-secondary text-secondary font-semibold hover:bg-secondary/5 transition-colors">Contact Sales</button>
+<h3 class="font-headline-md text-headline-md mb-4">Lead Capture</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                            Proactive identification and qualification of high-intent prospects across multiple digital channels, integrated directly into your CRM.
+                        </p>
 </div>
 </div>
 </div>
 </section>
-<!-- CTA Section -->
-<section class="py-24 bg-on-tertiary-fixed text-white relative overflow-hidden">
-<div class="absolute inset-0 opacity-10">
-<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary via-transparent to-transparent"></div>
+<!-- Interactive AI Preview -->
+<section class="py-24 hero-gradient relative">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="glass-card rounded-[40px] p-12 lg:p-20 grid lg:grid-cols-2 gap-16 items-center shadow-2xl">
+<div>
+<h2 class="font-display-lg text-display-lg mb-8">Ready to evolve your operations?</h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">dataset</span>
 </div>
-<div class="max-w-container-max mx-auto px-margin-desktop text-center relative z-10">
-<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-8">Ready to scale your business intelligence?</h2>
-<p class="text-surface-variant/70 text-lg mb-12 max-w-2xl mx-auto">Join over 5,000+ companies using BizBot AI to automate their growth cycles and increase revenue.</p>
-<div class="flex flex-col sm:flex-row gap-4 justify-center">
-<button class="bg-primary-container text-on-primary-container px-10 py-5 rounded-xl font-bold text-lg hover:scale-105 transition-transform">Get Started for Free</button>
-<button class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-xl font-bold text-lg hover:bg-white/20 transition-all">Schedule a Demo</button>
+<div>
+<h4 class="font-body-base text-body-base font-bold mb-1">Knowledge Integration</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Securely ingest your proprietary docs, wikis, and databases for private AI training.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="shrink-0 w-12 h-12 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">shield</span>
+</div>
+<div>
+<h4 class="font-body-base text-body-base font-bold mb-1">Enterprise-Grade Security</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">SOC2 compliant, end-to-end encryption, and dedicated VPC deployments.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-inverse-surface rounded-3xl p-1 shadow-2xl">
+<div class="bg-slate-900 rounded-[22px] overflow-hidden">
+<div class="p-4 border-b border-slate-800 flex items-center gap-3">
+<div class="flex gap-1.5">
+<div class="w-3 h-3 rounded-full bg-red-500/30"></div>
+<div class="w-3 h-3 rounded-full bg-amber-500/30"></div>
+<div class="w-3 h-3 rounded-full bg-emerald-500/30"></div>
+</div>
+<span class="font-mono-code text-mono-code text-slate-500 ml-4">aibusinessbot_v2.terminal</span>
+</div>
+<div class="p-8 font-mono-code text-mono-code text-slate-300 space-y-4">
+<p class="text-emerald-400"># Initializing Corporate Multi-Agent...</p>
+<p>> Analysis of Q3 Sales Funnel complete.</p>
+<p>> Recommendation: Deploy "Rapid-Response" agent for LinkedIn leads.</p>
+<p class="text-primary-fixed-dim">> Status: Active | Latency: 42ms</p>
+<div class="h-4 w-1 bg-white animate-pulse"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Tiers -->
+<section class="py-32 bg-white" id="pricing">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-20">
+<h2 class="font-display-lg text-display-lg mb-4">Scalable Intelligence</h2>
+<p class="font-body-base text-body-base text-on-surface-variant">Choose the plan that fits your organizational scale.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Starter -->
+<div class="flex flex-col p-10 rounded-[32px] bg-surface border border-outline-variant hover:shadow-lg transition-all">
+<span class="font-label-md text-label-md text-on-surface-variant mb-4 uppercase tracking-widest">Starter</span>
+<div class="mb-8">
+<span class="text-4xl font-bold">$199</span>
+<span class="text-on-surface-variant">/mo</span>
+</div>
+<ul class="flex-grow space-y-4 mb-10">
+<li class="flex items-center gap-3 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">check</span> 1 Core Agent
+                            </li>
+<li class="flex items-center gap-3 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">check</span> 5,000 Interactions/mo
+                            </li>
+<li class="flex items-center gap-3 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">check</span> Basic CRM Export
+                            </li>
+</ul>
+<button class="w-full py-4 rounded-xl border border-outline text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors">Start Free Trial</button>
+</div>
+<!-- Enterprise (Pro) -->
+<div class="flex flex-col p-10 rounded-[32px] bg-primary-container text-white shadow-2xl relative overflow-hidden scale-105 z-10">
+<div class="absolute top-0 right-0 px-6 py-2 bg-emerald-500 font-label-md text-label-md rounded-bl-xl">POPULAR</div>
+<span class="font-label-md text-label-md text-primary-fixed mb-4 uppercase tracking-widest">Enterprise</span>
+<div class="mb-8">
+<span class="text-4xl font-bold">$999</span>
+<span class="text-primary-fixed">/mo</span>
+</div>
+<ul class="flex-grow space-y-4 mb-10">
+<li class="flex items-center gap-3 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-emerald-400 text-[20px]">verified</span> Unlimited Core Agents
+                            </li>
+<li class="flex items-center gap-3 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-emerald-400 text-[20px]">verified</span> Unlimited Interactions
+                            </li>
+<li class="flex items-center gap-3 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-emerald-400 text-[20px]">verified</span> Full API Integration
+                            </li>
+<li class="flex items-center gap-3 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-emerald-400 text-[20px]">verified</span> Custom Knowledge Base
+                            </li>
+</ul>
+<button class="w-full py-4 rounded-xl bg-white text-primary-container font-label-md text-label-md shadow-xl hover:scale-[1.02] transition-all">Get Pro Version</button>
+</div>
+<!-- Custom -->
+<div class="flex flex-col p-10 rounded-[32px] bg-surface border border-outline-variant hover:shadow-lg transition-all">
+<span class="font-label-md text-label-md text-on-surface-variant mb-4 uppercase tracking-widest">Custom</span>
+<div class="mb-8">
+<span class="text-4xl font-bold">Talk to Sales</span>
+</div>
+<ul class="flex-grow space-y-4 mb-10">
+<li class="flex items-center gap-3 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">check</span> Dedicated Infrastructure
+                            </li>
+<li class="flex items-center gap-3 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">check</span> 24/7 Priority Support
+                            </li>
+<li class="flex items-center gap-3 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">check</span> Custom Model Training
+                            </li>
+</ul>
+<button class="w-full py-4 rounded-xl border border-outline text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors">Contact Enterprise</button>
+</div>
 </div>
 </div>
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-surface-container-lowest border-t border-outline-variant/20 py-12">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
-<div class="space-y-6">
-<div class="font-headline-md text-headline-md text-on-surface">BizBot AI</div>
-<p class="text-secondary text-body-sm">The world's most advanced AI sales assistant for modern enterprise teams. Scale faster with data-driven intelligence.</p>
+<footer class="bg-inverse-surface text-white pt-24 pb-12">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+<div class="col-span-1 md:col-span-1">
+<h3 class="font-headline-md text-headline-md font-bold mb-6">AIBusinessBot</h3>
+<p class="font-body-sm text-body-sm text-slate-400 mb-8 max-w-xs">
+                        Defining the future of corporate efficiency through autonomous multi-agent systems.
+                    </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">groups</span>
+</a>
+</div>
 </div>
 <div>
-<h4 class="font-bold mb-6 text-on-surface uppercase tracking-widest text-xs">Product</h4>
-<ul class="space-y-4">
-<li><a class="text-secondary hover:text-primary transition-colors text-body-sm" href="#">Features</a></li>
-<li><a class="text-secondary hover:text-primary transition-colors text-body-sm" href="#">Pricing</a></li>
-<li><a class="text-secondary hover:text-primary transition-colors text-body-sm" href="#">Security</a></li>
-<li><a class="text-secondary hover:text-primary transition-colors text-body-sm" href="#">Enterprise</a></li>
+<h4 class="font-label-md text-label-md mb-6 text-slate-500 uppercase tracking-widest">Product</h4>
+<ul class="space-y-4 font-body-sm text-body-sm text-slate-300">
+<li><a class="hover:text-white transition-colors" href="#">Enterprise Agents</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Sales Pipeline</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Integrations</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Security</a></li>
 </ul>
 </div>
 <div>
-<h4 class="font-bold mb-6 text-on-surface uppercase tracking-widest text-xs">Resources</h4>
-<ul class="space-y-4">
-<li><a class="text-secondary hover:text-primary transition-colors text-body-sm" href="#">Documentation</a></li>
-<li><a class="text-secondary hover:text-primary transition-colors text-body-sm" href="#">API Reference</a></li>
-<li><a class="text-secondary hover:text-primary transition-colors text-body-sm" href="#">Guides</a></li>
-<li><a class="text-secondary hover:text-primary transition-colors text-body-sm" href="#">API Status</a></li>
+<h4 class="font-label-md text-label-md mb-6 text-slate-500 uppercase tracking-widest">Company</h4>
+<ul class="space-y-4 font-body-sm text-body-sm text-slate-300">
+<li><a class="hover:text-white transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Privacy</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Terms</a></li>
 </ul>
 </div>
-<div>
-<h4 class="font-bold mb-6 text-on-surface uppercase tracking-widest text-xs">Company</h4>
-<ul class="space-y-4">
-<li><a class="text-secondary hover:text-primary transition-colors text-body-sm" href="#">About Us</a></li>
-<li><a class="text-secondary hover:text-primary transition-colors text-body-sm" href="#">Contact</a></li>
-<li><a class="text-secondary hover:text-primary transition-colors text-body-sm" href="#">Privacy Policy</a></li>
-<li><a class="text-secondary hover:text-primary transition-colors text-body-sm" href="#">Terms of Service</a></li>
-</ul>
+<div class="bg-slate-800/50 p-8 rounded-3xl">
+<h4 class="font-label-md text-label-md mb-4 text-white uppercase tracking-widest">Newsletter</h4>
+<p class="font-body-sm text-body-sm text-slate-400 mb-6">Intelligence updates delivered to your inbox.</p>
+<div class="relative">
+<input class="w-full bg-slate-900 border-none rounded-xl py-3 px-4 text-white focus:ring-2 focus:ring-primary" placeholder="work@email.com" type="email"/>
+<button class="absolute right-2 top-2 material-symbols-outlined text-primary">send</button>
 </div>
 </div>
-<div class="max-w-container-max mx-auto px-margin-desktop mt-16 pt-8 border-t border-outline-variant/10 text-center text-secondary text-body-sm">
-            © 2024 BizBot AI. Institutional Intelligence.
-        </div>
+</div>
+<div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-sm text-body-sm text-slate-500">© 2024 AIBusinessBot. All rights reserved.</p>
+<div class="flex items-center gap-6">
+<span class="font-label-md text-label-md text-slate-500 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span> System Operational
+                    </span>
+</div>
+</div>
+</div>
 </footer>
 <script>
-        // Micro-interactions for glass-cards
-        document.querySelectorAll('.glass-card').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                card.style.setProperty('--mouse-x', `${x}px`);
-                card.style.setProperty('--mouse-y', `${y}px`);
+        // Simple scroll behavior for TopBar
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+
+        // Micro-interactions for buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                let ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
             });
         });
     </script>
+<style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-bounce-slow { animation: bounce-slow 4s ease-in-out infinite; }
+
+        .ripple {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple-effect 0.6s linear;
+            pointer-events: none;
+        }
+        @keyframes ripple-effect {
+            to { transform: scale(4); opacity: 0; }
+        }
+    </style>
 </body></html>
