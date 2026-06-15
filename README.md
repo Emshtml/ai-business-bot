@@ -1,69 +1,75 @@
-# BizBot AI – Institutional Intelligence
+# 🤖 AI Business Bot PRO - Institutional Intelligence
 
-BizBot AI is a professional, high-fidelity AI-powered business assistant designed to optimize sales strategies, capture high-intent leads, and automate complex business operations. Built for modern enterprises, it provides a seamless interface for data-driven decision-making.
+[![Vercel Deployment](https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge&logo=vercel)](https://ai-business-bot-delta.vercel.app)
+[![Next.js 14](https://img.shields.io/badge/Framework-Next.js%2014-blue?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![Design System](https://img.shields.io/badge/UI-Nexus%20Intelligence-indigo?style=for-the-badge)](https://github.com/Emshtml/ai-business-bot/blob/main/src/styles/design-system.css)
 
-## 🚀 Key Features
+O **AI Business Bot PRO** é uma plataforma SaaS de alta performance projetada para automatizar o ciclo completo de vendas e inteligência de negócios. Utilizando LLMs de última geração, o sistema transforma leads brutos em oportunidades qualificadas através de análise preditiva, estratégias personalizadas e automação de engajamento.
 
-*   **AI Sales Strategies:** Deploy custom-tuned AI models to analyze market trends and generate bespoke outreach playbooks.
-*   **Intelligent Lead Capture:** Convert traffic with autonomous agents that qualify prospects in real-time and manage booking meetings.
-*   **Automated Responses:** Maintain a human-like tone across all channels with AI that handles nuance, objections, and follow-ups.
-*   **Executive Dashboard:** Real-time KPIs, conversion rates, and AI efficiency metrics at a glance.
-*   **AI Insights Chat:** Deep-dive into business intelligence with an immersive, contextual AI chat interface.
-*   **Leads Management:** Comprehensive data management with AI-scored leads and CRM synchronization.
+## 🚀 Funcionalidades PRO
 
-## 🛠️ Technology Stack
+### 📊 Dashboard Executivo
+Visão panorâmica de métricas críticas: leads totais, taxas de conversão e economia de tempo gerada pela IA. Interface baseada em Bento Grid para máxima densidade de informação.
 
-*   **Frontend:** HTML5, Tailwind CSS
-*   **Typography:** Inter
-*   **Design System:** Custom "Synthetic Intelligence Corporate" system
-*   **Deployment:** Optimized for Vercel
+### 🧠 AI Strategy Lab
+Módulo avançado para geração de playbooks de vendas, análise de tendências de mercado e otimização de funis de marketing baseada em dados em tempo real.
 
-## 📂 Project Structure
+### 🤝 Gestão Inteligente de Leads
+Sistema de **AI Lead Scoring** que prioriza prospects com maior probabilidade de fechamento, integrado a uma interface de gestão com alta performance.
 
-```text
-ai-business-bot/
-├── src/
-│   ├── styles/
-│   │   └── design-system.css # Global styles and Tailwind directives
-├── index.html                # Landing Page
-├── dashboard.html            # Dashboard Overview
-├── insights.html             # AI Insights Chat
-├── leads.html                # Leads Management
-├── tailwind.config.js        # Custom theme configuration
-├── package.json              # Build scripts and dependencies
-└── README.md                 # Project documentation
+### 💬 Chat IA Avançado
+Interface conversacional de baixa latência com suporte a streaming, memória de contexto longo e integração direta com CRMs.
+
+### 💳 Monetização & Billing
+Fluxo completo de assinaturas integrado ao Stripe, com múltiplos tiers (Starter, Enterprise, Custom) e gestão automatizada de faturas.
+
+## 🛠️ Stack Tecnológica
+
+- **Frontend:** Next.js 14 (App Router), Tailwind CSS, Framer Motion.
+- **Design System:** Nexus Intelligence (Geist Font, Glassmorphism).
+- **Backend:** Node.js, Vercel AI SDK, Prisma ORM.
+- **IA:** OpenAI GPT-4o / Claude 3.5 Sonnet.
+- **Pagamentos:** Stripe Billing & Checkout.
+- **Deploy:** Vercel (CI/CD).
+
+## 📂 Estrutura do Repositório
+
+```bash
+/app              # Rotas do Next.js (Dashboard, Leads, Billing, Admin)
+/components       # Componentes UI compartilhados (Nexus Design System)
+/src/styles       # Tokens de Design e Configurações Tailwind
+/lib              # Configurações de API (OpenAI, Stripe, Prisma)
+/public           # Assets estáticos e imagens da marca
 ```
 
-## ⚡ Getting Started
+## ⚙️ Instalação e Configuração
 
-### Prerequisites
-Ensure you have [Node.js](https://nodejs.org/) installed to run the Tailwind build process.
-
-### Installation
-1. Clone the repository:
+1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/your-username/ai-business-bot.git
+   git clone https://github.com/Emshtml/ai-business-bot.git
    ```
-2. Install dependencies:
+
+2. **Instale as dependências:**
    ```bash
    npm install
    ```
-3. Build the CSS:
-   ```bash
-   npm run build
+
+3. **Configure as variáveis de ambiente (.env):**
+   ```env
+   DATABASE_URL="sua_url_postgres"
+   NEXTAUTH_SECRET="seu_secret"
+   OPENAI_API_KEY="sua_chave_ai"
+   STRIPE_SECRET_KEY="sua_chave_stripe"
    ```
 
-### Local Development
-To view the project locally, you can use any static server or the included `serve` package:
-```bash
-npm start
-```
+4. **Inicie o ambiente de desenvolvimento:**
+   ```bash
+   npm run dev
+   ```
 
-## 🌐 Deployment on Vercel
+## 📄 Licença
 
-1. Push your code to a GitHub repository.
-2. Connect your repository to [Vercel](https://vercel.com/).
-3. Vercel will automatically detect the configuration and deploy your site.
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
-*Created with Stitch — Institutional Intelligence for modern enterprise sales teams.*
+Desenvolvido com foco em escalabilidade e conversão por **BizBot AI Institutional Intelligence**.
