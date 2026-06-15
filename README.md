@@ -72,4 +72,4 @@ Fluxo completo de assinaturas integrado ao Stripe, com múltiplos tiers (Starter
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
-Desenvolvido com foco em escalabilidade e conversão por **BizBot AI Institutional Intelligence**.
+Desenvolvido com foco em escalabilidade e conversão por **Emshtml **.
